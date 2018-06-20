@@ -22,8 +22,11 @@
                         </div>
                         @if (isset($item->count))
                             <div class="panel-footer">
-                                <p class="text-center">{{ $key+1 }}位: {{ $item->count}} Want</p>
-                                <p class="text-center">{{ $key+1 }}位: {{ $item->count}} Have</p>
+                                @if($type=="want")
+                                    <p class="text-center">{{ $key+1 }}位: {{ $item->count}} Want</p>
+                                @elseif($type=="have")
+                                    <p class="text-center">{{ $key+1 }}位: {{ $item->count}} Have</p>
+                                @endif
                             </div>
                         @endif
                     </div>
